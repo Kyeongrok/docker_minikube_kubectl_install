@@ -1,7 +1,19 @@
-### How To Use
+### Minikube설치 한번에
+
+<img src="https://img.shields.io/badge/kubernetes-brightgreen?logo=springboot&logoColor=white"/>
+
 
 ## 주의 사항
 minikube는 cpu가 2core이상에서 실행 됩니다. t2.micro에서는 실행되지 않습니다.
+
+## git clone하기
+
+```
+sudo su -
+mkdir git
+cd git
+git clone https://github.com/Kyeongrok/docker_minikube_kubectl_install
+```
 
 ## 사용 방법
 

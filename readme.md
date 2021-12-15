@@ -1,6 +1,6 @@
 ### Minikube설치 한번에
 
-<img src="https://img.shields.io/badge/kubernetes-brightgreen?logo=springboot&logoColor=white"/>
+<img src="https://img.shields.io/badge/kubernetes-brightgreen?logo=Kubernetes&logoColor=white"/>
 
 
 ## 주의 사항

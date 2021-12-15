@@ -1,4 +1,10 @@
 ### How To Use
+
+## 주의 사항
+minikube는 cpu가 2core이상에서 실행 됩니다. t2.micro에서는 실행되지 않습니다.
+
+## 사용 방법
+
 sh docker_install.sh
 
 sh minikube_install.sh
@@ -11,3 +17,6 @@ sh kubectl_install.sh
 
 sh docker_install.sh; sh minikube_install.sh; sh kubectl_install.sh; sh utils.sh
 
+## minikube 실행
+
+minikube start --vm-driver=none

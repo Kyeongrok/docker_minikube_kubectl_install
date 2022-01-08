@@ -4,7 +4,7 @@
 
 
 ## 주의 사항
-minikube는 cpu가 2core이상에서 실행 됩니다. t2.micro에서는 실행되지 않습니다.
+minikube는 t2.micro(프리티어)에서는 실행되지 않습니다.
 
 ## git clone하기
 

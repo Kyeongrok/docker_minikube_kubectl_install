@@ -16,7 +16,7 @@ git clone https://github.com/Kyeongrok/docker_minikube_kubectl_install
 ```
 
 ## Kubeadm Short Cut
-git clone https://github.com/Kyeongrok/docker_minikube_kubectl_install; cd docker_minikube_kubectl_install;sh docker_install.sh; sh utils.sh; sh kubeadm_install.sh
+git clone https://github.com/Kyeongrok/docker_minikube_kubectl_install; cd docker_minikube_kubectl_install;sh docker_install.sh; sh kubeadm_install.sh
 
 ## Minikube Short Cut
 git clone https://github.com/Kyeongrok/docker_minikube_kubectl_install; cd docker_minikube_kubectl_install;sh docker_install.sh; sh minikube_install.sh; sh kubectl_install.sh; sh utils.sh

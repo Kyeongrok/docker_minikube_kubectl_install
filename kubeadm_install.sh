@@ -1,5 +1,18 @@
 #swap off
 sudo swapoff -a
+
+sudo mkdir /etc/docker
+cat <<EOF | sudo tee /etc/docker/daemon.json
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m"
+  },
+  "storage-driver": "overlay2"
+}
+EOF
+
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl
 # Add a GPG key for the Packages
@@ -9,5 +22,16 @@ sudo apt-get update
 # Install kubelet, kubeadm, kubectl
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
+
 # add <host_ip> controlplane to /etc/hosts
 sudo echo $(hostname -I | awk '{ print $1 }') controlplane >> /etc/hosts
+
+# create kubeadm-config.yaml
+cat <<EOF > $HOME/kubeadm-config.yaml
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: ClusterConfiguration
+kubernetesVersion: $(kubelet --version |  awk '{ print $2 }')
+controlPlaneEndpoint: "controlplane:6443" #<-- Use the node alias not the IP
+networking:  #<-- Use the word stable for newest version
+  podSubnet: 192.168.0.0/16 #<-- Match the IP range from the Calico config file
+EOF

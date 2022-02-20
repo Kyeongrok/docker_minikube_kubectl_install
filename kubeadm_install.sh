@@ -7,3 +7,5 @@ sudo apt-get update
 # Install kubelet, kubeadm, kubectl
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
+# add <host_ip> controlplane to /etc/hosts
+sudo echo $(hostname -I | awk '{ print $1 }') controlplane >> /etc/hosts

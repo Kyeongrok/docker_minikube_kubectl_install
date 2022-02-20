@@ -39,3 +39,10 @@ controlPlaneEndpoint: "controlplane:6443" #<-- Use the node alias not the IP
 networking:  #<-- Use the word stable for newest version
   podSubnet: 192.168.0.0/16 #<-- Match the IP range from the Calico config file
 EOF
+# kubeadm init
+kubeadm init --config=$HOME/kubeadm-config.yaml --upload-certs | tee kubeadm-init.out
+exit
+# mkdir -p $HOME/.kube
+# sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+# sudo chown $(id -u):$(id -g) $HOME/.kube/config
+

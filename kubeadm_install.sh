@@ -1,3 +1,5 @@
+#swap off
+sudo swapoff -a
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl
 # Add a GPG key for the Packages

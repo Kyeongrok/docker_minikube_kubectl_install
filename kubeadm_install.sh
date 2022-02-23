@@ -1,6 +1,9 @@
 #swap off
 sudo swapoff -a
 
+# hostname to 'controlplane'
+hostnamectl set-hostname 'controlplane'
+
 sudo mkdir /etc/docker
 cat <<EOF | sudo tee /etc/docker/daemon.json
 {

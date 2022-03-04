@@ -16,11 +16,14 @@ cat <<EOF | sudo tee /etc/docker/daemon.json
 }
 EOF
 
+# Install Docker
+sudo apt-get update
+sudo apt-get install -y docker.io
+
 sudo systemctl enable docker
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 
-sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl
 # Add a GPG key for the Packages
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg

@@ -52,6 +52,14 @@ EOF
 # kubeadm init
 echo $HOME
 kubeadm init --config=$HOME/kubeadm-config.yaml --upload-certs | tee kubeadm-init.out
+
+# regist kubectl admin
+export KUBECONFIG=/etc/kubernetes/admin.conf
+
+# download and install calico
+wget https://docs.projectcalico.org/manifests/calico.yaml
+kubectl apply -f calico.yaml
+
 su - ubuntu
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config

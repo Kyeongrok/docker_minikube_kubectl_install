@@ -17,9 +17,6 @@ cat <<EOF | sudo tee /etc/docker/daemon.json
 EOF
 
 # Install Docker
-sudo apt-get update
-sudo apt-get install -y docker.io
-
 sudo systemctl enable docker
 sudo systemctl daemon-reload
 sudo systemctl restart docker

@@ -17,6 +17,16 @@ join command가 나오게 하는 명령어 입니다.
 kubeadm token create --print-join-command
 ```
 
+## worker node에 스크립트 실행
+```
+kubeadm_worker_install.sh
+```
+
+## Cgroup확인
+```
+docker info | grep -i cgroup
+```
+
 ## Isseue
 ```
 "Failed to run kubelet" err="failed to run Kubelet: misconfiguration: kubelet cgroup driver: \"cgroupfs\" is different from docker cgroup driver: \"systemd\"

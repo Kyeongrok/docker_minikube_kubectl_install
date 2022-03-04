@@ -21,6 +21,9 @@ sudo systemctl enable docker
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 
+# check cgroup driver
+docker info | grep -i cgroup
+
 sudo apt-get install -y apt-transport-https ca-certificates curl
 # Add a GPG key for the Packages
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg

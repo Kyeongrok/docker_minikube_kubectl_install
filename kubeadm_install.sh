@@ -44,6 +44,10 @@ kubernetesVersion: $(kubelet --version |  awk '{ print $2 }')
 controlPlaneEndpoint: "controlplane:6443" #<-- Use the node alias not the IP
 networking:  #<-- Use the word stable for newest version
   podSubnet: 192.168.0.0/16 #<-- Match the IP range from the Calico config file
+---
+kind: KubeletConfiguration
+apiVersion: kubelet.config.k8s.io/v1beta1
+cgroupDriver: systemd
 EOF
 # kubeadm init
 echo $HOME

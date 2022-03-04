@@ -6,6 +6,8 @@
 ## 주의 사항
 minikube는 t2.micro(프리티어)에서는 실행되지 않습니다.
 
+
+
 ## git clone하기
 
 ```
@@ -17,6 +19,7 @@ git clone https://github.com/Kyeongrok/docker_minikube_kubectl_install
 
 ## Kubeadm Short Cut
 git clone https://github.com/Kyeongrok/docker_minikube_kubectl_install; cd docker_minikube_kubectl_install;sh docker_install.sh; sh kubeadm_install.sh
+- [kubeadm_readme](kubeadm_readme.md) (updated 2022-03-09)
 
 ## Minikube Short Cut
 git clone https://github.com/Kyeongrok/docker_minikube_kubectl_install; cd docker_minikube_kubectl_install;sh docker_install.sh; sh minikube_install.sh; sh kubectl_install.sh; sh utils.sh

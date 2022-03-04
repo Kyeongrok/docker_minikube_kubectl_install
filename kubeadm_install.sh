@@ -30,7 +30,7 @@ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://pack
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
 # Install kubelet, kubeadm, kubectl
-sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-get install -y kubeadm=1.21.1-00 kubelet=1.21.1-00 kubectl=1.21.1-00
 sudo apt-mark hold kubelet kubeadm kubectl
 
 # add <host_ip> controlplane to /etc/hosts

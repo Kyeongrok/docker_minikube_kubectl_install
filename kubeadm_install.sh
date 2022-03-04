@@ -46,6 +46,7 @@ networking:  #<-- Use the word stable for newest version
   podSubnet: 192.168.0.0/16 #<-- Match the IP range from the Calico config file
 EOF
 # kubeadm init
+echo $HOME
 kubeadm init --config=$HOME/kubeadm-config.yaml --upload-certs | tee kubeadm-init.out
 su - ubuntu
 mkdir -p $HOME/.kube

@@ -43,3 +43,7 @@ docker info | grep -i cgroup
 "Failed to run kubelet" err="failed to run Kubelet: misconfiguration: kubelet cgroup driver: \"cgroupfs\" is different from docker cgroup driver: \"systemd\"
 ```
 위 메세지 나오면서 kubelet이 실행 안되는 경우
+
+# [preflight] Running pre-flight checks
+위 메세지에서 안넘어가고 Timeout이 나는 경우는 6443포트와 통신이 안되기 때문일 수 있습니다. 6443포트를 열어 주시면 됩니다.
+

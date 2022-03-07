@@ -17,8 +17,7 @@ cd git
 git clone https://github.com/Kyeongrok/docker_minikube_kubectl_install
 ```
 
-## Kubeadm Short Cut
-git clone https://github.com/Kyeongrok/docker_minikube_kubectl_install; cd docker_minikube_kubectl_install;sh docker_install.sh; sh kubeadm_install.sh
+## Kubeadm설치는 아래 링크
 - [kubeadm_readme](kubeadm_readme.md) (updated 2022-03-09)
 
 ## Minikube Short Cut

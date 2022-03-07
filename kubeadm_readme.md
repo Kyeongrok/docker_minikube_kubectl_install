@@ -26,6 +26,7 @@ kubeadm token create --print-join-command
 ```
 
 ## worker node에 스크립트 실행
+- 실행 하기 전에 host에 controlplane이 추가 되어 있는지 확인 합니다.
 ```
 kubeadm_worker_install.sh
 ```

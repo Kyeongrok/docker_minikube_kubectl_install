@@ -2,8 +2,12 @@
 
 <img src="https://img.shields.io/badge/kubernetes-brightgreen?logo=Kubernetes&logoColor=white"/>
 
+## 설치 전에 확인 할 것
+- 방화벽 port가 오픈 되어 있는지 또는 내려가 있는지 확인 합니다.
+
 ## kubeadm설치
 ```
+sudo -i
 sh kubeadm_install.sh
 ```
 ## 설치 후 작업

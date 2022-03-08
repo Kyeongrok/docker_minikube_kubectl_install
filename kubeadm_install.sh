@@ -60,10 +60,10 @@ kubeadm init --config=$HOME/kubeadm-config.yaml --upload-certs | tee kubeadm-ini
 # download and install calico
 wget https://docs.projectcalico.org/manifests/calico.yaml
 
-su - ubuntu
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
+#su - ubuntu
+#mkdir -p $HOME/.kube
+#sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+#sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 # auto completion
 sudo apt-get install bash-completion -y

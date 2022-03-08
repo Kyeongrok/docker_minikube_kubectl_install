@@ -33,6 +33,7 @@ wget https://docs.projectcalico.org/manifests/calico.yaml
   - kubeadm_worker_install.sh를 이용해 kubectl, kubelet, kubeadm을 설치 후 master의 join명령어로 join합니다.
 
 ## Flannel
+ - 10.244.0.0/16 를 cidr로 해주어야 합니다.
  - kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
 
 ## kubeadm join command print

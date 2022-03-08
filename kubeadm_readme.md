@@ -23,6 +23,12 @@ sudo -i
 sh kubeadm_install.sh
 ```
 ## 설치 후 작업
+
+### Taint풀기
+```
+kubectl taint nodes --all node-role.kubernetes.io/master-
+```
+
 ### Calico
 - CNI(Calico)설치 https://projectcalico.docs.tigera.io/getting-started/kubernetes/quickstart
 ```

@@ -1,8 +1,11 @@
+K8S_VERSION="1.21.1-00"
+HOST_NAME="node01"
+
 #swap off
 sudo swapoff -a
 
 # hostname to 'node01'
-hostnamectl set-hostname 'node01'
+hostnamectl set-hostname $HOST_NAME
 
 sudo mkdir /etc/docker
 cat <<EOF | sudo tee /etc/docker/daemon.json
@@ -28,6 +31,6 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
 sudo apt-get update
 # Install kubelet, kubeadm, kubectl
-sudo apt-get install -y kubeadm=1.21.1-00 kubelet=1.21.1-00 kubectl=1.21.1-00
+sudo apt-get install -y kubeadm=$K8S_VERSION kubelet=$K8S_VERSION kubectl=$K8S_VERSION
 sudo apt-mark hold kubelet kubeadm kubectl
 

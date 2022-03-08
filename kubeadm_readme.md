@@ -11,6 +11,7 @@ sudo -i
 sh kubeadm_install.sh
 ```
 ## 설치 후 작업
+### Calico
 - CNI(Calico)설치 https://projectcalico.docs.tigera.io/getting-started/kubernetes/quickstart
 ```
 wget https://docs.projectcalico.org/manifests/calico.yaml
@@ -18,6 +19,9 @@ wget https://docs.projectcalico.org/manifests/calico.yaml
 - 또는 wget https://docs.projectcalico.org/manifests/calico.yaml 명령어로 calico.yaml다운로드 후 apply
 - worker join
   - kubeadm_worker_install.sh를 이용해 kubectl, kubelet, kubeadm을 설치 후 master의 join명령어로 join합니다.
+
+## Flannel
+ - kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
 
 ## kubeadm join command print
 join command가 나오게 하는 명령어 입니다.

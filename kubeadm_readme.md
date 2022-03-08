@@ -13,6 +13,8 @@
   - Worker node
     - TCP - Inbound - 10250: Kubelet API (used by Self, Control plane)
     - TCP - Inbound - 30000~32767: NodePort Services (used by All)
+  - UDP(All node)
+    - 8285, 8472
 
  
 ## kubeadm설치

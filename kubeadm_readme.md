@@ -3,8 +3,18 @@
 <img src="https://img.shields.io/badge/kubernetes-brightgreen?logo=Kubernetes&logoColor=white"/>
 
 ## 설치 전에 확인 할 것
-- 방화벽 port가 오픈 되어 있는지 또는 내려가 있는지 확인 합니다.
+- 방화벽 port가 오픈 되어 있는지 확인 합니다.
+  - Master node
+    - TCP - Inbound - 6443 : Kubernetes API Server
+    - TCP - Inbound - 2379~2380: Etcd server client API (used by kube-apiserver, etcd)
+    - TCP - Inbound - 10250: Kubelet API (used by Self, Control plane)
+    - TCP - Inbound - 10251: kube-scheduler (used by Self)
+    - TCP - Inbound - 10252: kube-controller-manager (used by Self)
+  - Worker node
+    - TCP - Inbound - 10250: Kubelet API (used by Self, Control plane)
+    - TCP - Inbound - 30000~32767: NodePort Services (used by All)
 
+ 
 ## kubeadm설치
 ```
 sudo -i

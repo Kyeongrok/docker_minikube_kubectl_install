@@ -1,3 +1,7 @@
+
+K8S_VERSION="1.21.1-00"
+POD_SUBNET="192.168.0.0/16"
+
 #swap off
 sudo swapoff -a
 
@@ -37,7 +41,7 @@ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://pack
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
 # Install kubelet, kubeadm, kubectl
-sudo apt-get install -y kubeadm=1.21.1-00 kubelet=1.21.1-00 kubectl=1.21.1-00
+sudo apt-get install -y kubeadm=$K8S_VERSION kubelet=$K8S_VERSION kubectl=$K8S_VERSION
 sudo apt-mark hold kubelet kubeadm kubectl
 
 # add <host_ip> controlplane to /etc/hosts
@@ -50,7 +54,7 @@ kind: ClusterConfiguration
 kubernetesVersion: $(kubelet --version |  awk '{ print $2 }')
 controlPlaneEndpoint: "controlplane:6443" #<-- Use the node alias not the IP
 networking:  #<-- Use the word stable for newest version
-  podSubnet: 192.168.0.0/16 #<-- Match the IP range from the Calico config file
+  podSubnet: $POD_SUBNET #<-- Match the IP range from the Calico config file
 ---
 kind: KubeletConfiguration
 apiVersion: kubelet.config.k8s.io/v1beta1

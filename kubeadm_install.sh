@@ -1,12 +1,13 @@
 
 K8S_VERSION="1.21.1-00"
 POD_SUBNET="192.168.0.0/16"
+HOST_NAME="controlplane"
 
 #swap off
 sudo swapoff -a
 
 # hostname to 'controlplane'
-hostnamectl set-hostname 'controlplane'
+hostnamectl set-hostname $HOST_NAME
 
 sudo mkdir /etc/docker
 cat <<EOF | sudo tee /etc/docker/daemon.json

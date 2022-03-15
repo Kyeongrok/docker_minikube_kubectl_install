@@ -24,6 +24,12 @@ sh kubeadm_install.sh
 ```
 ## 설치 후 작업
 
+### root일 때 kubectl권한 넣기
+user에서는 쓰지 마세요
+```
+export KUBECONFIG=/etc/kubernetes/admin.conf
+```
+
 ### Taint풀기
 ```
 kubectl taint nodes --all node-role.kubernetes.io/master-

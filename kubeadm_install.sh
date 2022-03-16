@@ -1,6 +1,6 @@
 
 K8S_VERSION="1.21.1-00"
-POD_SUBNET="192.168.0.0/16"
+POD_SUBNET="10.244.0.0/16"
 HOST_NAME="controlplane"
 
 #swap off

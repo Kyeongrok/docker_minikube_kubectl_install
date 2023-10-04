@@ -3,6 +3,10 @@
 <img src="https://img.shields.io/badge/kubernetes-brightgreen?logo=Kubernetes&logoColor=white"/>
 
 
+## 권장 OS
+- Ubuntu 20.04
+
+
 ## 주의 사항
 minikube는 t2.micro(프리티어)에서는 실행되지 않습니다.
 
